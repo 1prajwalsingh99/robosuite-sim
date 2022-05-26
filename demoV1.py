@@ -9,9 +9,9 @@ controller_config = load_controller_config(default_controller="OSC_POSE")
 controller_config["control_delta"] = False # This will make action inputs relate to global frame 
 # print(controller_config)
 df = pd.read_csv("/home/prajwal/Documents/robosuite/sampleInputsRobo - Sheet1.csv")
-df1 = df[df["Label"] == "LABEL1"]
-df2 = df[df["Label"] == "LABEL2"]
-dfLst = [df1, df2]
+# df1 = df[df["Label"] == "LABEL1"]
+# df2 = df[df["Label"] == "LABEL2"]
+# dfLst = [df1, df2]
 # create environment instance
 env = suite.make(
     env_name="Lift", # try with other tasks like "Stack" and "Door"
@@ -25,16 +25,16 @@ env = suite.make(
 )
 
 
-
+# val = env.robots[0].set_joint_attribute(attrib="frictionloss", values=0.1 * np.ones(env.robots[0].dof), force=False)
 # reset the environment
 
  # [x,y,z,roll,pitch,yaw,gripper] not super sure on orientation tho 
 # print(tempArr)
 
 tempLst = []
-hashMap = {'Label': [0]*len(dfLst)*5*2000, 'relativeCycleTime': [0]*len(dfLst)*5*2000, 'robo_joint0_pos': [0]*len(dfLst)*5*2000, 
-'robo_joint1_pos': [0]*len(dfLst)*5*2000, 'robo_joint2_pos': [0]*len(dfLst)*5*2000, 'robo_joint3_pos': [0]*len(dfLst)*5*2000, 
-'robo_joint4_pos': [0]*len(dfLst)*5*2000, 'robo_joint5_pos': [0]*len(dfLst)*5*2000, 'eef_x': [0]*len(dfLst)*5*2000, 'eef_y': [0]*len(dfLst)*5*2000, 'eef_z': [0]*len(dfLst)*5*2000}
+# hashMap = {'Label': [0]*len(dfLst)*5*2000, 'relativeCycleTime': [0]*len(dfLst)*5*2000, 'robo_joint0_pos': [0]*len(dfLst)*5*2000, 
+# 'robo_joint1_pos': [0]*len(dfLst)*5*2000, 'robo_joint2_pos': [0]*len(dfLst)*5*2000, 'robo_joint3_pos': [0]*len(dfLst)*5*2000, 
+# 'robo_joint4_pos': [0]*len(dfLst)*5*2000, 'robo_joint5_pos': [0]*len(dfLst)*5*2000, 'eef_x': [0]*len(dfLst)*5*2000, 'eef_y': [0]*len(dfLst)*5*2000, 'eef_z': [0]*len(dfLst)*5*2000}
 
 finalPos = [0.1, 0.0, 1.0, np.pi, 0.0, 0.0, 0.5]
 cube_pos = []
