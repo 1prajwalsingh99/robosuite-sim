@@ -1,7 +1,7 @@
 # Project
 MUJOCO_LOG.TXT
 *.csv
-
+.venv
 
 ################################
 # https://github.com/github/gitignore/blob/main/Python.gitignore
