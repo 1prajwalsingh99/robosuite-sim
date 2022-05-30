@@ -8,7 +8,7 @@ import pandas as pd
 controller_config = load_controller_config(default_controller="OSC_POSE")
 controller_config["control_delta"] = False # This will make action inputs relate to global frame 
 # print(controller_config)
-df = pd.read_csv("/home/prajwal/Documents/robosuite/sampleInputsRobo - Sheet1.csv")
+df = pd.read_csv("sampleInputsRobo - Sheet1.csv")
 df1 = df[df["Label"] == "LABEL1"]
 df2 = df[df["Label"] == "LABEL2"]
 dfLst = [df1, df2]
