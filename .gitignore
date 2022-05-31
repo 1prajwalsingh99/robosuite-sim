@@ -2,6 +2,7 @@
 MUJOCO_LOG.TXT
 *.csv
 .venv
+.vscode
 
 ################################
 # https://github.com/github/gitignore/blob/main/Python.gitignore
